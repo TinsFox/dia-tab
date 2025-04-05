@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia Tab</title>
+    <link rel="stylesheet" href="~/assets/index.css" />
+    <link rel="stylesheet" href="~/assets/all.min.css" />
+    <meta name="manifest.include" content="['chrome', 'firefox']" />
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .search-container {
+            transition: all 0.3s ease;
+        }
+        
+        .search-box {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:hover, .search-box:focus-within {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-personalize {
+            transition: all 0.25s ease;
+        }
+        
+        .btn-personalize:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .floating-button {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.25s ease;
+        }
+        
+        .floating-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .option-text {
+            color: #5f6368;
+            transition: color 0.2s ease;
+        }
+        
+        .option-text:hover {
+            color: #202124;
+        }
+    </style>
+
+</head>
+<body id="page-body" class="flex flex-col min-h-screen">
+    
+    <!-- Main Content Area -->
+    <main id="main-content" class="flex-grow flex items-center justify-center px-4">
+        <div id="search-container" class="search-container w-full max-w-xl">
+            <!-- Logo Placeholder (Optional) -->
+            <div id="logo-container" class="mb-8 text-center">
+                <h1 id="logo-title" class="text-4xl font-bold tracking-tight text-gray-800">Dia</h1>
+            </div>
+            
+            <!-- Search Box -->
+            <div id="search-box" class="search-box rounded-full bg-white border border-gray-200 flex items-center p-4 mb-6">
+                <i id="search-icon" class="fas fa-search text-gray-400 mr-3"></i>
+                <input id="search-input" type="text" placeholder="Search the web" class="flex-grow focus:outline-none">
+            </div>
+            
+            <!-- Add tabs or files option -->
+            <div id="add-option-container" class="text-center mb-12">
+                <a href="#" id="add-option-link" class="option-text flex items-center justify-center text-sm">
+                    <i id="add-option-icon" class="fas fa-plus mr-2"></i>
+                    <span id="add-option-text">Add tabs or files</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Area -->
+    <footer id="footer" class="py-6 px-4 flex justify-center">
+        <button id="personalize-button" class="btn-personalize flex items-center rounded-full px-5 py-2.5 border border-gray-200">
+            <i id="personalize-icon" class="fas fa-paint-brush mr-2 text-gray-600"></i>
+            <span id="personalize-text" class="text-gray-700">Personalize Dia</span>
+        </button>
+    </footer>
+    
+    <!-- Floating Action Button -->
+    <div id="floating-action-container" class="fixed bottom-6 right-6">
+        <button id="settings-button" class="floating-button w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center">
+            <i id="settings-icon" class="fas fa-cog text-gray-600"></i>
+        </button>
+    </div>
+    
+    <script>
+        // Add focus effect to search box
+        const searchBox = document.getElementById('search-input');
+        const searchContainer = document.getElementById('search-box');
+        
+        searchBox.addEventListener('focus', () => {
+            searchContainer.classList.add('ring-2', 'ring-blue-200');
+        });
+        
+        searchBox.addEventListener('blur', () => {
+            searchContainer.classList.remove('ring-2', 'ring-blue-200');
+        });
+
+        // Add functionality to search on Enter key press
+        searchBox.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                const query = searchBox.value.trim();
+                if (query) {
+                    const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                    window.location.href = googleSearchUrl;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

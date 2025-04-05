@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <link href="https://fastly.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .search-container {
+            transition: all 0.3s ease;
+        }
+        
+        .search-box {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:hover, .search-box:focus-within {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-personalize {
+            transition: all 0.25s ease;
+        }
+        
+        .btn-personalize:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .floating-button {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.25s ease;
+        }
+        
+        .floating-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .option-text {
+            color: #5f6368;
+            transition: color 0.2s ease;
+        }
+        
+        .option-text:hover {
+            color: #202124;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="82e02a7c-8c71-4702-bd24-0d45c4d0600a" class="flex flex-col min-h-screen">
+    
+    <!-- Main Content Area -->
+    <main id="6bc90e55-cb74-47fb-82bc-089cdd062c2e" class="flex-grow flex items-center justify-center px-4">
+        <div id="0833dbc4-0171-4c6b-95af-0334bb1bb524" class="search-container w-full max-w-xl">
+            <!-- Logo Placeholder (Optional) -->
+            <div id="8a9bd379-8be2-4626-9fd1-37f5f9466287" class="mb-8 text-center">
+                <h1 id="9c1ffa4c-0157-4db6-ae79-ae61d40724df" class="text-4xl font-bold tracking-tight text-gray-800">Dia</h1>
+            </div>
+            
+            <!-- Search Box -->
+            <div id="e0196eb2-9d1a-4f8a-891e-7aed244f549d" class="search-box rounded-full bg-white border border-gray-200 flex items-center p-4 mb-6">
+                <i id="4fc806df-4276-4bd2-8e4f-707bb3f789d4" class="fas fa-search text-gray-400 mr-3"></i>
+                <input id="507d7f61-c396-45ee-8f53-0e5156f27522" type="text" placeholder="Search the web" class="flex-grow focus:outline-none">
+            </div>
+            
+            <!-- Add tabs or files option -->
+            <div id="3fa8838c-580c-4a2f-af36-a2f56d8867c9" class="text-center mb-12">
+                <a href="#" id="90543e62-0eee-4c12-a296-c9a618694fc5" class="option-text flex items-center justify-center text-sm">
+                    <i id="0d193b35-d3e8-4d8d-ab30-aa94a7624797" class="fas fa-plus mr-2"></i>
+                    <span id="33ccc3bf-bbdd-448a-b1eb-1e04bba8a9d4">Add tabs or files</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Area -->
+    <footer id="62918e8c-9115-4953-ae96-3ba4b8de7e3c" class="py-6 px-4 flex justify-center">
+        <button id="edec9863-395a-4abe-83a1-5d48b860b3d1" class="btn-personalize flex items-center rounded-full px-5 py-2.5 border border-gray-200">
+            <i id="b16a0e34-641f-46c6-94c2-01b3e3becfd4" class="fas fa-paint-brush mr-2 text-gray-600"></i>
+            <span id="675fe2ef-ae26-44cc-a767-71840095578a" class="text-gray-700">Personalize Dia</span>
+        </button>
+    </footer>
+    
+    <!-- Floating Action Button -->
+    <div id="1f258a55-1d81-4826-83ce-1bc96eb4986a" class="fixed bottom-6 right-6">
+        <button id="15c843e5-00dd-4e7d-b71e-1bac34e7c0d8" class="floating-button w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center">
+            <i id="2797bf01-1dbe-47c1-a27d-d8499e2abcc6" class="fas fa-cog text-gray-600"></i>
+        </button>
+    </div>
+    
+    <script>
+        // Add focus effect to search box
+        const searchBox = document.getElementById('507d7f61-c396-45ee-8f53-0e5156f27522');
+        const searchContainer = document.getElementById('e0196eb2-9d1a-4f8a-891e-7aed244f549d');
+        
+        searchBox.addEventListener('focus', () => {
+            searchContainer.classList.add('ring-2', 'ring-blue-200');
+        });
+        
+        searchBox.addEventListener('blur', () => {
+            searchContainer.classList.remove('ring-2', 'ring-blue-200');
+        });
+    </script>
+</body>
+</html>
