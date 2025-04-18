@@ -2,6 +2,10 @@
 
 一个受 [Dia Browser](https://www.diabrowser.com/) 启发的 Chrome 新标签页扩展。
 
+## 预览
+
+![Dia Tab 预览](./dia-tab.png)
+
 ## 功能特性
 
 - 简洁优雅的新标签页界面
